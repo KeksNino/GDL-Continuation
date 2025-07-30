@@ -52,11 +52,6 @@ const Home = () => {
 
   useEffect(() => {
     const init = async () => {
-      const appVersion = await ipcRenderer.invoke('getAppVersion');
-      if (lastUpdateVersion !== appVersion) {
-        dispatch(updateLastUpdateVersion(appVersion));
-        dispatch(openModal('ChangeLogs'));
-      }
       try {
         const { data } = await axios.get(
           null

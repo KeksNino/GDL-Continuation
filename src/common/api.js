@@ -206,6 +206,16 @@ export const getFabricManifest = () => {
   return axios.get(url);
 };
 
+export const getNeoforgeManifest = () => {
+  const url = `https://maven.neoforged.net/releases/net/neoforged/neoforge/maven-metadata.json?timestamp=${new Date().getTime()}`;
+  return axios.get(url);
+};
+
+export const getQuiltManifest = () => {
+  const url = `${FABRIC_APIS}/quilt/versions`;
+  return axios.get(url);
+};
+
 export const getJavaManifest = () => {
   const url = JAVA_MANIFEST_URL;
   return axios.get(url);
