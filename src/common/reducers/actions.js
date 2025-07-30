@@ -54,8 +54,6 @@ import {
   getFabricJson,
   getFabricManifest,
   getForgeManifest,
-  getNeoforgeManifest,
-  getQuiltManifest,
   getJavaLatestManifest,
   getJavaManifest,
   getMcManifest,

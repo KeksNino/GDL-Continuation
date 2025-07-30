@@ -324,52 +324,6 @@ export const getFilteredVersions = (
             }))
         }
       ]
-    },
-    {
-      value: 'quilt',
-      label: 'Quilt',
-      children: [
-        {
-          value: 'release',
-          label: 'Releases',
-          children: fabricManifest.game
-            .filter(v => v.stable)
-            .map(v => ({
-              value: v.version,
-              label: v.version,
-              children: fabricManifest.loader.map(c => ({
-                value: c.version,
-                label: c.version
-              }))
-            }))
-        },
-        {
-          value: 'snapshot',
-          label: 'Snapshots',
-          children: fabricManifest.game
-            .filter(v => !v.stable)
-            .map(v => ({
-              value: v.version,
-              label: v.version,
-              children: fabricManifest.loader.map(c => ({
-                value: c.version,
-                label: c.version
-              }))
-            }))
-        }
-      ]
-    },
-    {
-      value: 'neoforge',
-      label: 'NeoForge',
-      children: Object.entries(forgeManifest).map(([k, v]) => ({
-        value: k,
-        label: k,
-        children: v.sort(sortByForgeVersionDesc).map(child => ({
-          value: child,
-          label: child.split('-')[1]
-        }))
-      }))
     }
   ];
   return versions;
