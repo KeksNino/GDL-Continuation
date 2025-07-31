@@ -17,6 +17,8 @@ const McVersionChanger = ({ instanceName, defaultValue }) => {
   const vanillaManifest = useSelector(state => state.app.vanillaManifest);
   const fabricManifest = useSelector(state => state.app.fabricManifest);
   const forgeManifest = useSelector(state => state.app.forgeManifest);
+  const neoforgeManifest = useSelector(state => state.app.neoforgeManifest);
+  const quiltManifest = useSelector(state => state.app.quiltManifest);
   const config = useSelector(state => _getInstance(state)(instanceName));
   const [selectedVersion, setSelectedVersion] = useState(null);
 

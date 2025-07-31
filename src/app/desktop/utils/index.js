@@ -230,7 +230,9 @@ export const librariesMapper = (libraries, librariesPath) => {
 export const getFilteredVersions = (
   vanillaManifest,
   forgeManifest,
-  fabricManifest
+  fabricManifest,
+  neoforgeManifest,
+  quiltManifest
 ) => {
   const versions = [
     {
@@ -362,6 +364,27 @@ export const getFilteredVersions = (
     {
       value: 'neoforge',
       label: 'NeoForge',
+      children: [
+        {
+          value: 'release',
+          label: 'Releases',
+          children: [
+            { value: '1.20.4 value', label: '1.20.4 label' },
+            { value: '1.20.5 value', label: '1.20.5 label' },
+          ]
+        },
+        /*
+        {
+          value: 'releaseXYZ',
+          label: 'Releases XYZ',
+          children: [
+            { value: 'XYZ 1.20.4 value', label: 'XYZ 1.20.4 label' },
+            { value: 'XYZ 1.20.5 value', label: 'XYZ 1.20.5 label' },
+          ]
+        },
+        */
+      ]
+      /*
       children: Object.entries(forgeManifest).map(([k, v]) => ({
         value: k,
         label: k,
@@ -370,6 +393,7 @@ export const getFilteredVersions = (
           label: child.split('-')[1]
         }))
       }))
+      */
     }
   ];
   return versions;
